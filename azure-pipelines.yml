@@ -40,5 +40,5 @@ stages:
         dockerfile: $(dockerfilePath)
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
-          $(Build.BuiuldId)
+          $(Build.BuildId)
           latest
