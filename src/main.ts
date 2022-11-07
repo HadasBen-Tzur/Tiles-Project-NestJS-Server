@@ -5,7 +5,6 @@ import { xss } from 'express-xss-sanitizer';
 import helmet from 'helmet';
 import * as hpp from 'hpp';
 import * as compression from 'compression';
-import { useContainer } from 'class-validator';
 
 async function bootstrap() {
   //const clientUrl = process.env.CLIENT_URL || ['http://localhost:3000'];

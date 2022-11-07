@@ -1,10 +1,10 @@
-import { Controller, Get, Body, Param, Delete, Put } from '@nestjs/common';
+import { Controller, Get, Body, Param, Delete, Put, UseGuards } from '@nestjs/common';
 import { TilesService } from './tiles.service';
 import { UpdateTileDto } from './dto/update-tile.dto';
 import { ObjectId } from 'mongodb';
-import { getMiddlewareJWT } from 'src/middlewars/auth.middleware';
+import { AuthJwtGuard } from 'src/guards/jwt.guard';
 
-//@Controller('tiles', getMiddlewareJWT)
+@UseGuards(AuthJwtGuard)
 @Controller('tiles')
 export class TilesController {
   constructor(private readonly tilesService: TilesService) {}
